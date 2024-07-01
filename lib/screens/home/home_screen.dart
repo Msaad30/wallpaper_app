@@ -28,6 +28,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var mWidth = MediaQuery.of(context).size.width;
+    var mHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.primaryLightColor,
       body: ListView(
@@ -35,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           // 1
           SizedBox(
-            height: 60,
+            height: mHeight * 0.1,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -88,17 +90,17 @@ class _HomePageState extends State<HomePage> {
 
           ///2
           SizedBox(
-            height: 20,
+            height: mHeight * 0.04,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text("Best of months", style: mTextStyle16(mFontWeight: FontWeight.bold),),
           ),
           SizedBox(
-            height: 7,
+            height: mHeight * 0.01,
           ),
           SizedBox(
-            height: 200,
+            height: mHeight * 0.3,
             child: BlocBuilder<HomeCubit, HomeState>(
               builder: (BuildContext context, state) {
                 if(state is HomeLoadingState){
@@ -142,17 +144,17 @@ class _HomePageState extends State<HomePage> {
 
           ///3
           SizedBox(
-            height: 11,
+            height: mHeight * 0.02,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text("Color tone", style: mTextStyle16(mFontWeight: FontWeight.bold),),
           ),
           SizedBox(
-            height: 7,
+            height: mHeight * 0.01,
           ),
           SizedBox(
-            height: 50,
+            height: mHeight * 0.06,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: ListView.builder(
@@ -191,14 +193,14 @@ class _HomePageState extends State<HomePage> {
 
           ///3
           SizedBox(
-            height: 11,
+            height: mHeight * 0.02,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text("Categories", style: mTextStyle16(mFontWeight: FontWeight.bold),),
           ),
           SizedBox(
-            height: 7,
+            height: mHeight * 0.01,
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20),

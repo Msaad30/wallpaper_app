@@ -6,6 +6,7 @@ import 'package:wallpaper_app/screens/home/cubit/home_cubit.dart';
 import 'package:wallpaper_app/screens/home/home_screen.dart';
 import 'package:wallpaper_app/screens/search/cubit/search_cubit.dart';
 import 'package:wallpaper_app/screens/search/searched_wallpaper_page.dart';
+import 'package:wallpaper_app/screens/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,23 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MultiBlocProvider(
-        providers: [
-          BlocProvider(
-          create: (context) => HomeCubit(
-              wallPaperRepository: WallPaperRepository(apiHelper: ApiHelper())
-            ),
-          ),
-          BlocProvider(
-            create: (context) => SearchCubit(
-                wallPaperRepository: WallPaperRepository(
-                    apiHelper: ApiHelper()
-                )
-            ),
-          ),
-        ],
-        child: HomePage(),
-        )
+      home: SplashScreen()
     );
   }
 }
